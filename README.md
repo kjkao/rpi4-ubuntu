@@ -51,12 +51,23 @@ respberry pi 4 ubuntu setup scripts notes
 3. service isc-dhcp-server restart
 
 ### LAMP (Linux Apache MySQL PHP)
-
+[Raspberry Pi: Install Apache + MySQL + PHP (LAMP Server)](https://randomnerdtutorials.com/raspberry-pi-apache-mysql-php-lamp-server/)
 #### Apache
+
+1. apt install apache2
+
+#### PHP
+
+1. apt install php
 
 #### MySQL
 
-#### PHP
+1. apt install mariadb-server php-mysql
+2. mysql_secure_installation
+
+#### phpmyadmin
+
+1. apt install phpmyadmin
 
 ### Services
 
