@@ -64,6 +64,10 @@ respberry pi 4 ubuntu setup scripts notes
 
 1. apt install mariadb-server php-mysql
 2. mysql_secure_installation
+3. mysql
+    - CREATE USER 'admin'@'localhost' IDENTIFIED BY 'password';
+    - GRANT ALL PRIVILEGES ON * . * TO 'admin'@'localhost' WITH GRANT OPTION;
+    - FLUSH PRIVILEGES;
 
 #### phpmyadmin
 
