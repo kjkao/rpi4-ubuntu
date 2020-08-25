@@ -76,3 +76,8 @@ respberry pi 4 ubuntu setup scripts notes
 1. apt install monitorix
 2. vim /etc/monitorix/monitorix.conf
 3. service monitorix restart
+4. vim /etc/apache2/conf-available/monitorix.conf
+5. a2enconf monitorix
+6. a2enmod cgi
+7. systemctl reload apache2
+
