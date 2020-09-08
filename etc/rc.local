@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pon dsl-provider
+sleep 15
+/root/scripts/iptables.sh
+sleep 3
+/etc/init.d/monitorix restart
+
