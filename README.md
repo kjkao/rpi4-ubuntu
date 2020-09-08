@@ -10,16 +10,27 @@ respberry pi 4 ubuntu setup scripts notes
 2. Execute imager.exe; Select OS(Ubuntu 64bit 20.04) and Disk(MicroSD) then Write
 3. Insert Micro SD to Respberry Pi, then boot
 
-### System
+### System Settings
 
 #### Timezone
 - timedatectl set-timezone Asia/Taipei
+
+#### rc-local
+- systemctl enable rc-local
+- systemctl start rc-local
+
+#### [/etc/rc.local](etc/rc.local)
+- [/root/scripts/iptables.sh](root/scripts/iptables.sh)
+
+#### [/etc/crontab](etc/crontab)
+- [/root/scripts/auto-reconnect.sh](root/scripts/auto-reconnect.sh)
+- [/root/scripts/hosts.deny-sshd.sh](root/scripts/hosts.deny-sshd.sh)
 
 ### Networking
 
 #### Network Bridge
 
-1. vim /etc/netplan/50-cloud-init.conf
+1. vim [/etc/netplan/50-cloud-init.yaml](etc/netplan/50-cloud-init.yaml)
 2. service networking restart
 
 #### PPPoE
@@ -30,8 +41,8 @@ respberry pi 4 ubuntu setup scripts notes
 #### Wireless AP
 
 1. apt install hostapd
-2. vim /etc/network/interfaces
-3. vim /etc/hostapd/hostapd.conf
+2. vim [/etc/network/interfaces](etc/network/interfaces)
+3. vim [/etc/hostapd/hostapd.conf](etc/hostapd/hostapd.conf)
 4. systemctl unmask hostapd
 5. systemctl enable hostapd
 6. service hostapd start
@@ -78,9 +89,9 @@ respberry pi 4 ubuntu setup scripts notes
 #### Monitorix
 
 1. apt install monitorix
-2. vim /etc/monitorix/monitorix.conf
+2. vim [/etc/monitorix/monitorix.conf](etc/monitorix/monitorix.conf)
 3. service monitorix restart
-4. vim /etc/apache2/conf-available/monitorix.conf
+4. vim [/etc/apache2/conf-available/monitorix.conf](etc/apache2/conf-available/monitorix.conf)
 5. a2enconf monitorix
 6. a2enmod cgi
 7. systemctl reload apache2
