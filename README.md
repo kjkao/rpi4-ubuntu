@@ -10,10 +10,21 @@ respberry pi 4 ubuntu setup scripts notes
 2. Execute imager.exe; Select OS(Ubuntu 64bit 20.04) and Disk(MicroSD) then Write
 3. Insert Micro SD to Respberry Pi, then boot
 
-### System
+### System Settings
 
 #### Timezone
 - timedatectl set-timezone Asia/Taipei
+
+#### rc-local
+- systemctl enable rc-local
+- systemctl start rc-local
+
+#### [/etc/rc.local](etc/rc.local)
+- [/root/scripts/iptables.sh](root/scripts/iptables.sh)
+
+#### [/etc/crontab](etc/crontab)
+- [/root/scripts/auto-reconnect.sh](root/scripts/auto-reconnect.sh)
+- [/root/scripts/hosts.deny-sshd.sh](root/scripts/hosts.deny-sshd.sh)
 
 ### Networking
 
