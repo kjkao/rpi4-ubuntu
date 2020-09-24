@@ -1,0 +1,36 @@
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+114.32.37.86    kjkao.tw
+192.168.12.1    kjkao
+192.168.12.2    zyxel
+192.168.12.3    kjkao-bpi
+192.168.12.4    kjkao-rpi
+192.168.12.5    kjkao-bpim2
+192.168.12.253  kjkao-rpi4
+192.168.12.254  FTTH
+
+192.168.12.101  msi
+192.168.12.102  benq
+192.168.12.103  nexus7
+192.168.12.104  msi-wifi
+192.168.12.105  m7
+192.168.12.106  m9
+192.168.12.107  mibox
+192.168.12.108  mibox-wifi
+192.168.12.109  m10
+192.168.12.110  a9
+192.168.12.111  bliss
+192.168.12.112  kj-i5
+192.168.12.113  kj-i5-wifi 30:52:cb:4e:b0:cf
+192.168.12.114  nswitch
+192.168.12.115  u11 40:4e:36:19:3a:f4
+192.168.12.116  49fx600
+192.168.12.117  49fx600-wifi d8:61:62:58:35:18

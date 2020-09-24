@@ -1,8 +1,10 @@
 #!/bin/bash
 
-pon dsl-provider
-sleep 15
+ifconfig br0 192.168.12.1
+
 /root/scripts/iptables.sh
 sleep 3
 /etc/init.d/monitorix restart
+sleep 1
 
+ifconfig | mail -s 'kjkao boot ifconfig' jeremy.kao@gmail.com

@@ -16,3 +16,6 @@ iface dsl-provider inet ppp
 pre-up /bin/ip link set br0 up # line maintained by pppoeconf
 provider dsl-provider
 
+#auto dsl-dip-provider
+#iface dsl-dip-provider inet ppp
+#provider dsl-dip-provider
