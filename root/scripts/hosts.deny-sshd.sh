@@ -12,8 +12,8 @@ do
     continue;
   else
     L0=`grep -e "$DS" $AUTHLOG | grep -e 'Failed password for' | grep -m1 -e "$addr"`
-    L=`echo $L0 | cut -d ' ' -f1,2,3,9- | sed 's/ from .* ssh2//g'`
-    echo \# @$L >> /etc/hosts.deny
+    L=`echo $L0 | cut -d ' ' -f3,9- | sed 's/ from .* ssh2//g'`
+    echo \# @`date +%F` $L >> /etc/hosts.deny
     if [ "`echo $addr | egrep '([0-9]{1,3}\.){3}[0-9]{1,3}'`" ] ; then
       echo sshd: $addr >> /etc/hosts.deny
     else
