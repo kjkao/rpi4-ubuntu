@@ -8,6 +8,7 @@ function usage() {
   echo "        list    list ciphername"
   echo "        enc     encrypt string"
   echo "        dec     decrypt"
+  echo "        decq    decrypt quiet"
   echo
   echo
   exit
@@ -41,6 +42,14 @@ elif [ "$CMD" = "dec" ] ; then
   echo
   openssl rsautl -inkey $HOME/.ssh/id_rsa -decrypt -in $ENCFILE
   echo
+
+elif [ "$CMD" = "decq" ] ; then
+
+  if [ "$CN" = "" ] ; then
+    usage
+  fi
+
+  openssl rsautl -inkey $HOME/.ssh/id_rsa -decrypt -in $ENCFILE
 
 elif [ "$CMD" = "enc" ] ; then
 

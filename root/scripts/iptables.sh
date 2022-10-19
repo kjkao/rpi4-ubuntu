@@ -13,7 +13,10 @@ iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
 iptables -A INPUT -p tcp --dport 22 -j ACCEPT
 iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -p tcp --dport 8000 -j ACCEPT
 iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+iptables -A INPUT -p tcp --dport 8088 -j ACCEPT
+iptables -A INPUT -p tcp --dport 8443 -j ACCEPT
 iptables -A INPUT -p tcp --dport 443 -j ACCEPT
 #iptables -A INPUT -p tcp --dport 2000:2099 -j ACCEPT
 #iptables -A INPUT -p tcp --dport 2100 -j ACCEPT

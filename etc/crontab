@@ -21,5 +21,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 #
 
-*/10 * * * * 	root	/bin/bash -c /root/scripts/auto-reconnect.sh
-*/15 * * * * 	root	/bin/bash -c /root/scripts/hosts.deny-sshd.sh
+*/15 * * * * 	root	/bin/bash -c /root/scripts/auto-reconnect.sh
+*/20 * * * * 	root	/bin/bash -c /root/scripts/hosts.deny-sshd.sh
+*/20 * * * * 	root	/bin/bash -c /root/scripts/hosts.deny-mysql.sh
+13 0 * * *	root	/bin/bash -c "/root/scripts/http_access-mysql.sh /var/log/apache2/access.log.1"
