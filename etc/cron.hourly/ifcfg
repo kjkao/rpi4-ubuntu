@@ -3,5 +3,7 @@
 ifconfig | grep -v -e 'X ' > /dev/shm/ifcfg.tmp
 if [ -e /dev/shm/ifcfg.txt ] ; then
   diff  -I 'febe:ae6d' -q /dev/shm/ifcfg.tmp /dev/shm/ifcfg.txt || cat /dev/shm/ifcfg.tmp | mail -s 'kjkao network addresses' jeremy.kao@gmail.com
+else
+  cat /dev/shm/ifcfg.tmp | mail -s 'kjkao network addresses' jeremy.kao@gmail.com
 fi
 mv /dev/shm/ifcfg.tmp /dev/shm/ifcfg.txt

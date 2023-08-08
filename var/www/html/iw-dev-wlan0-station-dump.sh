@@ -7,7 +7,8 @@ else
     if [[ "$L" =~ "Station"* ]] ; then
       MACADDR=`echo $L | cut -d ' ' -f 2`
       WLHOST=`grep $MACADDR /etc/hosts | sed s/$MACADDR//g`
-      echo "$L" $WLHOST
+      echo "$L"
+      echo "  $WLHOST"
     else
       echo "    "$L
     fi

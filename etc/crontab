@@ -21,9 +21,11 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
 #
 
-7,17,27,37,47,57 * * * * 	root	/bin/bash -c /root/scripts/ping-local.sh > /dev/null 2>&1
+27,57 * * * * 	root	/bin/bash -c /root/scripts/ping-local.sh > /dev/null 2>&1
 */15 * * * * 	root	/bin/bash -c /root/scripts/auto-reconnect.sh
-*/20 * * * * 	root	/bin/bash -c /root/scripts/hosts.deny-sshd.sh
-*/20 * * * * 	root	/bin/bash -c /root/scripts/hosts.deny-mysql.sh
-5,15,25,35,45,55 * * * *	root	/bin/bash -c "/root/scripts/http_access-mysql.sh /var/log/apache2/access.log"
+#*/20 * * * * 	root	/bin/bash -c /root/scripts/hosts.deny-sshd.sh
+#*/20 * * * * 	root	/bin/bash -c /root/scripts/hosts.deny-mysql.sh
+#5,15,25,35,45,55 * * * *	root	/bin/bash -c "/root/scripts/http_access-mysql.sh /var/log/apache2/access.log"
 7 0 * * *	root	/root/scripts/dhcp-log.sh noauth >> /root/dhcp.noauth.log
+11,41 * * * *	root	/root/scripts/arp.sh
+3,18,33,48 * * * *	root	/bin/bash -c /root/scripts/iptables-drop-refused.sh
