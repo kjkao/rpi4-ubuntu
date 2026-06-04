@@ -26,6 +26,8 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 #*/20 * * * * 	root	/bin/bash -c /root/scripts/hosts.deny-sshd.sh
 #*/20 * * * * 	root	/bin/bash -c /root/scripts/hosts.deny-mysql.sh
 #5,15,25,35,45,55 * * * *	root	/bin/bash -c "/root/scripts/http_access-mysql.sh /var/log/apache2/access.log"
+#13 2 * * *	root	/bin/bash -c "/root/scripts/http_access-mysql-no200.sh /var/log/apache2/access.log.1"
+13 2 * * *	root	/bin/bash -c "/root/scripts/http_access-mysql.1.sh /var/log/apache2/access.log.1"
 7 0 * * *	root	/root/scripts/dhcp-log.sh noauth >> /root/dhcp.noauth.log
 11,41 * * * *	root	/root/scripts/arp.sh
-3,18,33,48 * * * *	root	/bin/bash -c /root/scripts/iptables-drop-refused.sh
+3,18,33,48 * * * *	root	/bin/bash -c /root/scripts/drop-sshd.sh
