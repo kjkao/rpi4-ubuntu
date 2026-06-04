@@ -14,5 +14,8 @@ for H in ${HS[@]} ; do
 done
 #echo $EC
 if [ "$EC" == "$HC" ] ; then
+  echo "ping local devices: all failed."
   $DIR/smail.sh "ping local devices: all failed."
+  exit 1
 fi
+exit 0

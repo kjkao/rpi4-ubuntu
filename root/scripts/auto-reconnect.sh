@@ -8,7 +8,8 @@ for (( I=0 ; I <= 5 ; I=$(( I + 1 )) )) ; do
   ping -c 1 -W 1 $PPP_GW > /dev/null 2>&1
 
   if [ $? = 0 ] ; then
-#    logger -t $TAG network connected.
+    logger -t $TAG network connected.
+    $DIR/ping-local.sh || break
     exit;
   fi
 done
